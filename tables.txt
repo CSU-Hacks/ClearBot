@@ -1,0 +1,24 @@
+General Tables:
+------------------------------------------------------
+Server List
+Error Log
+Bot event Log
+
+Per Server/Schema tables:
+-------------------------------------------------------
+Server information table (2 columns, various information for each server)
+Server features table (2 columns, true/false on whether features are enabled)
+Server item IDs
+Server members table (reputation of members)
+Server event log
+Pending Events
+Upcoming Events
+Past Events
+Denied Events
+Mentor User List
+Mentor Skills List
+Mentor Skills Types
+Mentor Requests Pending
+Mentor Requests Approved
+Mentor Requests Denied
+Mentor Resources Table
