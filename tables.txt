@@ -1,23 +1,58 @@
 General Tables:
 ------------------------------------------------------
 Server List
+    Server ID
+    Server Name
+    Date Joined
+    Server Owner's ID
 Error Log
 Bot event Log
+    Event Type
+    Event Time
+    Event Description
+
+
 
 Per Server/Schema tables:
 -------------------------------------------------------
 Server information table (2 columns, various information for each server)
+    Moderation Role
+    Bot-spam channel
 Server features table (2 columns, true/false on whether features are enabled)
+    Mentorship
+    Verification
+    Discipline
+    Events
+    Rules
+    FAQ
 Server item IDs
+    Event ID
+    Mentor Request ID
+    Mentor Skill ID
+    Mentor Skill Type ID
+    Resources ID
 Server members table (reputation of members)
+    Member ID
+    Reputation
+    Mentor Reputation
 Server event log
+    Event Type
+    Event Time
+    Event information
 Pending Events
 Upcoming Events
 Past Events
 Denied Events
 Mentor User List
+    User ID
+    Skill Name
 Mentor Skills List
+    Skill Name
+    Skill Type
+    Skill ID
 Mentor Skills Types
+    Skill Type
+    Skill Type ID
 Mentor Requests Pending
 Mentor Requests Approved
 Mentor Requests Denied
