@@ -2,6 +2,7 @@
 
 import discord, logging
 from discord.ext import commands
+import joining_server.server_join_postgres #internal libraries
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
@@ -19,11 +20,12 @@ def get_token():
 
 @bot.event
 async def on_ready():
-    print('Client is online!')
+    await joining_server.server_join_postgres.connect()
 
 @bot.event
 async def on_guild_join(server):
     print(str(server.id))
+    
 
 @bot.event
 async def on_guild_remove(server):
