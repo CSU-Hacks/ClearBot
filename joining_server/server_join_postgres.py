@@ -30,3 +30,21 @@ async def connect():
     finally:
         if conn is not None:
             conn.close()
+
+
+async def new_server_added(server_id, name, owner_id):
+    conn = None
+    try:
+        params = await config()
+        conn = psycopg2.connect(**params)
+        cur = conn.cursor()
+        cur.callproc('new_server_added', [server_id, str(name), owner_id])
+        conn.commit()
+        conn.close()
+        return True
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+        return False
+    finally:
+        if conn is not None:
+            conn.close()

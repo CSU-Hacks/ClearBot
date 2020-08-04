@@ -2,7 +2,7 @@
 
 import discord, logging
 from discord.ext import commands
-import joining_server.server_join_postgres #internal libraries
+import joining_server.server_join_postgres, joining_server.server_join_handler #internal libraries
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
@@ -20,11 +20,11 @@ def get_token():
 
 @bot.event
 async def on_ready():
-    await joining_server.server_join_postgres.connect()
+    await joining_server.server_join_handler.new_server_handler(725357725546053685, "Nickle's Server of Cake and Suffering", 475488656170156039)
 
 @bot.event
 async def on_guild_join(server):
-    print(str(server.id))
+    await joining_server.server_join_handler.new_server_handler(server)
     
 
 @bot.event
