@@ -20,7 +20,8 @@ def get_token():
 
 @bot.event
 async def on_ready():
-    await joining_server.server_join_handler.new_server_handler(725357725546053685, "Nickle's Server of Cake and Suffering", 475488656170156039)
+    #await joining_server.server_join_handler.new_server_handler(725357725546053685, "Nickle's Server of Cake and Suffering", 475488656170156039)
+    print('Ready!')
 
 @bot.event
 async def on_guild_join(server):
