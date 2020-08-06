@@ -15,23 +15,6 @@ async def config(filename='database.ini', section='postgresql'):
         raise Exception('Section not found in the file')
     return db
 
-async def connect():
-    conn = None
-    try:
-        params = await config()
-        conn = psycopg2.connect(**params)
-        cur = conn.cursor()
-        cur.execute('SELECT VERSION()')
-        version = cur.fetchone()
-        print(version)
-        cur.close()
-    except (Exception, psycopg2.DatabaseError) as error:
-        print(error)
-    finally:
-        if conn is not None:
-            conn.close()
-
-
 async def new_server_added(server_id, name, owner_id):
     conn = None
     try:

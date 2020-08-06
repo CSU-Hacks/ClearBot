@@ -2,7 +2,7 @@
 
 import discord, logging
 from discord.ext import commands
-import joining_server.server_join_postgres, joining_server.server_join_handler #internal libraries
+import joining_server.server_join_postgres, joining_server.server_join_handler, leaving_server.server_leave_handler, leaving_server.server_leave_postgres #internal libraries
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
@@ -30,7 +30,7 @@ async def on_guild_join(server):
 
 @bot.event
 async def on_guild_remove(server):
-    print(str(server.id))
+    await leaving_server.server_leave_handler.leaving_server_handler(server)
 
 @bot.command()
 async def test(ctx, *args):
